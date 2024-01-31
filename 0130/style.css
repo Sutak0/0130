@@ -5,6 +5,7 @@ body {
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
+    background:rgb(189, 189, 189);
 }
 
 header {
@@ -19,6 +20,9 @@ header {
     justify-content: center;
 }
 
+#omAzon{
+    border-radius: 4px;
+}
 
 input[type="text"] {
     width: 20%;
@@ -31,6 +35,8 @@ input[type="text"] {
 button#keresGomb {
     display: inline-block;
     padding: 10px 20px;
+    margin: 10px;
+    border-radius: 4px;
     background-color: #28a745;
     color: white;
     border: none;
@@ -142,23 +148,29 @@ button#keresGomb:hover::after {
 
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 1;
     margin: 20px 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    border-radius: 4px; 
+    overflow: hidden; 
+    border: none;
 }
 
 th, td {
     padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid #dddddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    border-radius: 10px; 
+    border: none;
 }
 
 th {
     background-color: #218838;
     color: #ffffff;
     text-transform: uppercase;
+    text-align: center;
 }
 
 tr:nth-child(even) {
@@ -203,6 +215,9 @@ tr:last-child td:last-child {
     border-bottom-right-radius: 10px;
 }
 
+tr:last-child td {
+    border-bottom: none; 
+}
 
 .modal {
     display: none;
@@ -259,3 +274,98 @@ tr:last-child td:last-child {
     background-color: #45a049;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#listazGomb {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #218838;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#listazGomb span {
+    position: relative;
+    z-index: 2;
+}
+
+#listazGomb::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s;
+}
+
+#listazGomb:hover::after {
+    width: 100%;
+}
+
+.filter-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#filterValue, #filterType {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+#filterButton {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#filterButton:hover {
+    background-color: #28a745;
+}
+
+#resultsContainer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#resultsContainer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#resultsContainer ul li {
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+
+#resultsContainer ul li:last-child {
+    border-bottom: none;
+}
+
+#resultsContainer ul li:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+.filter-container, #resultsContainer, .center-container{
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px; 
+}

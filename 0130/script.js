@@ -191,8 +191,33 @@ document.getElementById('keresGomb').addEventListener('click', function() {
     const foundData = adatok.find(adat => adat.OM_Azonosito === inputVal);
 
     if (foundData) {
-        const newWindow = window.open('', '_blank', 'width=600,height=400,resizable,scrollbars');
-        newWindow.document.write('<style>body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; padding: 20px; } h1 { color: #333; } p { color: #333; font-size: 16px; }</style>');
+      const newWindow = window.open('', '_blank', 'width=600,height=400,resizable,scrollbars');
+      newWindow.document.write(`
+          <style>
+              body {
+                  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                  line-height: 1.6;
+                  color: #333;
+                  padding: 20px;
+                  background-color: #f4f4f4; 
+              }
+              h1 {
+                  color: #333;
+                  text-align: center;
+                  margin-bottom: 20px;
+              }
+              p {
+                  color: #333;
+                  font-size: 16px;
+                  background-color: #fff; 
+                  padding: 15px;
+                  border-radius: 10px; 
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+                  margin-bottom: 10px; 
+              }
+              
+          </style>
+      `);
         newWindow.document.write("<h1>Talált OM Azonosító adatai</h1>");
         for (const key in foundData) {
             newWindow.document.write("<p><b>" + key + "</b>: " + foundData[key] + "</p>");
